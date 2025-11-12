@@ -14,17 +14,16 @@ export function Hero({ onShopClick }: HeroProps) {
           <div className="space-y-6 md:space-y-8">
             <div className="inline-block">
               <span className="text-sm tracking-wide text-rose-600 bg-rose-100 px-4 py-2 rounded-full">
-                Premium K-Beauty
+                Korean Beauty
               </span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight">
-              Discover Korea's Beauty Secrets in Norway
+              Discover Korean beayty 
             </h1>
             
             <p className="text-gray-600 max-w-lg">
-              Bring out your natural glow with the most-loved K-beauty products — straight from Seoul to your doorstep. 
-              Clean formulas, radiant results, and beauty that feels uniquely you.
+              *description*.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -45,23 +44,14 @@ export function Hero({ onShopClick }: HeroProps) {
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-6 pt-4 text-sm text-gray-600">
               <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                  <span className="text-green-600">✓</span>
+                <div className="w-5 h-5 rounded-full bg-purple flex items-center justify-center">
                 </div>
-                <span>100% Authentic</span>
+                <span> **future trust badge**</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                  <span className="text-green-600">✓</span>
-                </div>
-                <span>Fast Delivery</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                  <span className="text-green-600">✓</span>
-                </div>
-                <span>Free Returns</span>
-              </div>
+
+              
+             
+              
             </div>
           </div>
 
@@ -70,7 +60,7 @@ export function Hero({ onShopClick }: HeroProps) {
             <div className="absolute inset-0 bg-gradient-to-br from-pink-200/30 to-rose-200/30 rounded-3xl blur-3xl" />
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1593638112487-4ddea6affcfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrb3JlYW4lMjBza2luY2FyZSUyMGJlYXV0eXxlbnwxfHx8fDE3NjI4NTQ5MzV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                src="https://img.freepik.com/premium-vector/red-grunge-rubber-stamp-with-word-replace-it_545399-3668.jpg"
                 alt="Korean beauty products"
                 className="w-full h-full object-cover aspect-square"
               />

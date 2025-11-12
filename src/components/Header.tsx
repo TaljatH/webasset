@@ -1,7 +1,7 @@
-import { Search, ShoppingBag, User, Menu } from 'lucide-react';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { useState } from 'react';
+import { Search, ShoppingBag, User, Menu } from "lucide-react";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { useState } from "react";
 
 interface HeaderProps {
   cartItemCount: number;
@@ -9,67 +9,53 @@ interface HeaderProps {
   onCartClick: () => void;
 }
 
-export function Header({ cartItemCount, onNavigate, onCartClick }: HeaderProps) {
+export function Header({
+  cartItemCount,
+  onNavigate,
+  onCartClick,
+}: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    //MenuBar
+    <header className=" top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between gap-8">
           {/* Logo */}
           <button
-            onClick={() => onNavigate('home')}
+            onClick={() => onNavigate("home")}
             className="shrink-0 transition-opacity hover:opacity-70"
           >
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-pink-200 to-rose-300 rounded-full" />
-              <span className="text-xl tracking-tight">K-Glow Oslo</span>
+              <span className="text-xl tracking-tight">*Store Name*</span>
             </div>
           </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
             <button
-              onClick={() => onNavigate('home')}
+              onClick={() => onNavigate("home")}
               className="text-gray-700 hover:text-gray-900 transition-colors"
             >
               Home
             </button>
             <button
-              onClick={() => onNavigate('shop')}
-              className="text-gray-700 hover:text-gray-900 transition-colors"
-            >
-              Shop
-            </button>
-            <button
-              onClick={() => onNavigate('skincare')}
+              onClick={() => onNavigate("skincare")}
               className="text-gray-700 hover:text-gray-900 transition-colors"
             >
               Skincare
             </button>
             <button
-              onClick={() => onNavigate('makeup')}
+              onClick={() => onNavigate("makeup")}
               className="text-gray-700 hover:text-gray-900 transition-colors"
             >
               Makeup
             </button>
             <button
-              onClick={() => onNavigate('collections')}
+              onClick={() => onNavigate("collections")}
               className="text-gray-700 hover:text-gray-900 transition-colors"
             >
               Collections
-            </button>
-            <button
-              onClick={() => onNavigate('about')}
-              className="text-gray-700 hover:text-gray-900 transition-colors"
-            >
-              About
-            </button>
-            <button
-              onClick={() => onNavigate('contact')}
-              className="text-gray-700 hover:text-gray-900 transition-colors"
-            >
-              Contact
             </button>
           </nav>
 
@@ -86,7 +72,11 @@ export function Header({ cartItemCount, onNavigate, onCartClick }: HeaderProps) 
             </div>
 
             {/* User Icon */}
-            <Button variant="ghost" size="icon" className="hidden md:flex text-gray-700">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hidden md:flex text-gray-700"
+            >
               <User className="w-5 h-5" />
             </Button>
 
@@ -122,7 +112,7 @@ export function Header({ cartItemCount, onNavigate, onCartClick }: HeaderProps) 
           <nav className="md:hidden mt-4 pb-4 border-t border-gray-100 pt-4 flex flex-col gap-3">
             <button
               onClick={() => {
-                onNavigate('home');
+                onNavigate("home");
                 setMobileMenuOpen(false);
               }}
               className="text-gray-700 hover:text-gray-900 transition-colors text-left"
@@ -131,7 +121,7 @@ export function Header({ cartItemCount, onNavigate, onCartClick }: HeaderProps) 
             </button>
             <button
               onClick={() => {
-                onNavigate('shop');
+                onNavigate("shop");
                 setMobileMenuOpen(false);
               }}
               className="text-gray-700 hover:text-gray-900 transition-colors text-left"
@@ -140,7 +130,7 @@ export function Header({ cartItemCount, onNavigate, onCartClick }: HeaderProps) 
             </button>
             <button
               onClick={() => {
-                onNavigate('skincare');
+                onNavigate("skincare");
                 setMobileMenuOpen(false);
               }}
               className="text-gray-700 hover:text-gray-900 transition-colors text-left"
@@ -149,7 +139,7 @@ export function Header({ cartItemCount, onNavigate, onCartClick }: HeaderProps) 
             </button>
             <button
               onClick={() => {
-                onNavigate('makeup');
+                onNavigate("makeup");
                 setMobileMenuOpen(false);
               }}
               className="text-gray-700 hover:text-gray-900 transition-colors text-left"
@@ -158,30 +148,12 @@ export function Header({ cartItemCount, onNavigate, onCartClick }: HeaderProps) 
             </button>
             <button
               onClick={() => {
-                onNavigate('collections');
+                onNavigate("collections");
                 setMobileMenuOpen(false);
               }}
               className="text-gray-700 hover:text-gray-900 transition-colors text-left"
             >
               Collections
-            </button>
-            <button
-              onClick={() => {
-                onNavigate('about');
-                setMobileMenuOpen(false);
-              }}
-              className="text-gray-700 hover:text-gray-900 transition-colors text-left"
-            >
-              About
-            </button>
-            <button
-              onClick={() => {
-                onNavigate('contact');
-                setMobileMenuOpen(false);
-              }}
-              className="text-gray-700 hover:text-gray-900 transition-colors text-left"
-            >
-              Contact
             </button>
             <div className="relative mt-2">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />

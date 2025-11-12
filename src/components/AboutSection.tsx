@@ -1,79 +1,201 @@
-import { Button } from './ui/button';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Search, ShoppingBag, User, Menu } from "lucide-react";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { useState } from "react";
 
-interface AboutSectionProps {
-  onLearnMore: () => void;
+interface HeaderProps {
+  cartItemCount: number;
+  onNavigate: (page: string) => void;
+  onCartClick: () => void;
 }
 
-export function AboutSection({ onLearnMore }: AboutSectionProps) {
+export function Header({
+  cartItemCount,
+  onNavigate,
+  onCartClick,
+}: HeaderProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Image */}
-          <div className="relative order-2 md:order-1">
-            <div className="relative rounded-3xl overflow-hidden shadow-xl">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1590393802688-ab3fd7c186f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWF1dHklMjBjb3NtZXRpY3MlMjBwYXN0ZWx8ZW58MXx8fHwxNzYyOTE3NTM4fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Korean beauty products collection"
-                className="w-full aspect-square object-cover"
+    //MenuBar
+    <header className=" top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between gap-8">
+          {/* Logo */}
+          <button
+            onClick={() => onNavigate("home")}
+            className="shrink-0 transition-opacity hover:opacity-70"
+          >
+            <div className="flex items-center gap-2">
+              <span className="text-xl tracking-tight">*Store Name*</span>
+            </div>
+          </button>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-6">
+            <button
+              onClick={() => onNavigate("home")}
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => onNavigate("skincare")}
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              Skincare
+            </button>
+            <button
+              onClick={() => onNavigate("makeup")}
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              Makeup
+            </button>
+            <button
+              onClick={() => onNavigate("collections")}
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              Collections
+            </button>
+            <button
+              onClick={() => onNavigate("about")}
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              About
+            </button>
+            <button
+              onClick={() => onNavigate("contact")}
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              Contact
+            </button>
+          </nav>
+
+          {/* Search and Actions */}
+          <div className="flex items-center gap-4">
+            {/* Search Bar - Hidden on mobile */}
+            <div className="hidden lg:flex items-center relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+              <Input
+                type="search"
+                placeholder="Search products..."
+                className="pl-10 w-64 border-gray-200 focus:border-pink-300"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-rose-200/40 rounded-full blur-3xl" />
-          </div>
 
-          {/* Content */}
-          <div className="space-y-6 order-1 md:order-2">
-            <span className="text-sm tracking-wide text-rose-600 bg-rose-100 px-4 py-2 rounded-full inline-block">
-              Our Story
-            </span>
-            
-            <h2 className="text-3xl md:text-4xl tracking-tight">
-              Inspired by Korea's Beauty Culture, Made for Norway
-            </h2>
-            
-            <div className="space-y-4 text-gray-600">
-              <p>
-                At K-Glow Oslo, we believe everyone deserves access to the innovative, effective skincare 
-                that Korean beauty has perfected over decades. We carefully curate only the best products 
-                from trusted brands, bringing Seoul's most coveted beauty secrets directly to your door in Norway.
-              </p>
-              <p>
-                Our mission is simple: to help you achieve healthy, glowing skin with products that truly work. 
-                Every item in our collection is chosen for its quality, effectiveness, and the joy it brings to 
-                your daily beauty routine.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6 py-6">
-              <div>
-                <div className="text-3xl mb-2">🇰🇷</div>
-                <p className="text-sm text-gray-600">Authentic Korean brands</p>
-              </div>
-              <div>
-                <div className="text-3xl mb-2">✨</div>
-                <p className="text-sm text-gray-600">Clean ingredients</p>
-              </div>
-              <div>
-                <div className="text-3xl mb-2">🚚</div>
-                <p className="text-sm text-gray-600">Fast shipping</p>
-              </div>
-              <div>
-                <div className="text-3xl mb-2">💚</div>
-                <p className="text-sm text-gray-600">Eco-conscious</p>
-              </div>
-            </div>
-
-            <Button 
-              onClick={onLearnMore}
-              variant="outline"
-              className="border-2 border-gray-900 hover:bg-gray-900 hover:text-white px-8 py-6 rounded-full transition-all duration-300"
+            {/* User Icon */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hidden md:flex text-gray-700"
             >
-              Learn More About Us
+              <User className="w-5 h-5" />
+            </Button>
+
+            {/* Cart Icon */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={onCartClick}
+              className="relative text-gray-700"
+            >
+              <ShoppingBag className="w-5 h-5" />
+              {cartItemCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-pink-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                  {cartItemCount}
+                </span>
+              )}
+            </Button>
+
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <Menu className="w-5 h-5" />
             </Button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <nav className="md:hidden mt-4 pb-4 border-t border-gray-100 pt-4 flex flex-col gap-3">
+            <button
+              onClick={() => {
+                onNavigate("home");
+                setMobileMenuOpen(false);
+              }}
+              className="text-gray-700 hover:text-gray-900 transition-colors text-left"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => {
+                onNavigate("shop");
+                setMobileMenuOpen(false);
+              }}
+              className="text-gray-700 hover:text-gray-900 transition-colors text-left"
+            >
+              Shop
+            </button>
+            <button
+              onClick={() => {
+                onNavigate("skincare");
+                setMobileMenuOpen(false);
+              }}
+              className="text-gray-700 hover:text-gray-900 transition-colors text-left"
+            >
+              Skincare
+            </button>
+            <button
+              onClick={() => {
+                onNavigate("makeup");
+                setMobileMenuOpen(false);
+              }}
+              className="text-gray-700 hover:text-gray-900 transition-colors text-left"
+            >
+              Makeup
+            </button>
+            <button
+              onClick={() => {
+                onNavigate("collections");
+                setMobileMenuOpen(false);
+              }}
+              className="text-gray-700 hover:text-gray-900 transition-colors text-left"
+            >
+              Collections
+            </button>
+            <button
+              onClick={() => {
+                onNavigate("about");
+                setMobileMenuOpen(false);
+              }}
+              className="text-gray-700 hover:text-gray-900 transition-colors text-left"
+            >
+              About
+            </button>
+            <button
+              onClick={() => {
+                onNavigate("contact");
+                setMobileMenuOpen(false);
+              }}
+              className="text-gray-700 hover:text-gray-900 transition-colors text-left"
+            >
+              Contact
+            </button>
+            <div className="relative mt-2">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+              <Input
+                type="search"
+                placeholder="Search products..."
+                className="pl-10 border-gray-200 focus:border-pink-300"
+              />
+            </div>
+          </nav>
+        )}
       </div>
-    </section>
+    </header>
   );
 }

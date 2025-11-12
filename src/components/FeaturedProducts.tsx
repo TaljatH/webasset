@@ -16,15 +16,10 @@ export function FeaturedProducts({ products, onProductClick, onAddToCart }: Feat
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-sm tracking-wide text-rose-600 bg-rose-100 px-4 py-2 rounded-full inline-block mb-4">
-            Best Sellers
-          </span>
-          <h2 className="text-3xl md:text-4xl tracking-tight mb-4">
-            Fan Favorites
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Discover our most-loved products that have transformed skincare routines across Norway
+          <p className="text-sm tracking-wide text-rose-600 bg-rose-100 px-4 py-4 rounded-full inline-block mb-4">
+            Featured Products
           </p>
+          
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
