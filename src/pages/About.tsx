@@ -1,5 +1,5 @@
-import { Heart, Sparkles, Truck, Shield } from 'lucide-react';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import { Heart, Sparkles, Truck, Shield } from "lucide-react";
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export function About() {
   return (
@@ -7,15 +7,11 @@ export function About() {
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-pink-50 via-rose-50 to-cream-50 py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <span className="text-sm tracking-wide text-rose-600 bg-rose-100 px-4 py-2 rounded-full inline-block mb-6">
-            Our Story
-          </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6">
-            Bringing K-Beauty to Norway
+            Korean Beauty to Norway
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            A passion project born from love for Korean skincare and a mission to make 
-            these incredible products accessible to everyone in Norway.
+            "insert about our story"
           </p>
         </div>
       </div>
@@ -29,20 +25,23 @@ export function About() {
             </h2>
             <div className="space-y-4 text-gray-600">
               <p>
-                K-Glow Oslo was founded in 2023 by a team of beauty enthusiasts who fell in love 
-                with Korean skincare during their travels to Seoul. We were amazed by the innovation, 
-                quality, and effectiveness of K-beauty products, and we knew we had to share this 
-                discovery with Norway.
+                K-Glow Oslo was founded in 2023 by a team of beauty enthusiasts
+                who fell in love with Korean skincare during their travels to
+                Seoul. We were amazed by the innovation, quality, and
+                effectiveness of K-beauty products, and we knew we had to share
+                this discovery with Norway.
               </p>
               <p>
-                What makes Korean beauty special is its focus on prevention, nourishment, and celebrating 
-                your natural beauty. It's not about covering up—it's about revealing your healthiest, 
-                most radiant skin.
+                What makes Korean beauty special is its focus on prevention,
+                nourishment, and celebrating your natural beauty. It's not about
+                covering up—it's about revealing your healthiest, most radiant
+                skin.
               </p>
               <p>
-                Today, we carefully curate products from Korea's most trusted brands, ensuring every 
-                item meets our high standards for quality, ingredients, and effectiveness. We're proud 
-                to be Norway's go-to destination for authentic K-beauty.
+                Today, we carefully curate products from Korea's most trusted
+                brands, ensuring every item meets our high standards for
+                quality, ingredients, and effectiveness. We're proud to be
+                Norway's go-to destination for authentic K-beauty.
               </p>
             </div>
           </div>
@@ -65,7 +64,8 @@ export function About() {
             </div>
             <h3 className="text-xl">100% Authentic</h3>
             <p className="text-sm text-gray-600">
-              Every product is sourced directly from authorized Korean distributors
+              Every product is sourced directly from authorized Korean
+              distributors
             </p>
           </div>
           <div className="text-center space-y-4">
@@ -74,7 +74,8 @@ export function About() {
             </div>
             <h3 className="text-xl">Quality First</h3>
             <p className="text-sm text-gray-600">
-              We test and curate only the best products that deliver real results
+              We test and curate only the best products that deliver real
+              results
             </p>
           </div>
           <div className="text-center space-y-4">
@@ -103,10 +104,12 @@ export function About() {
             Our Mission
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed">
-            To help everyone in Norway discover the transformative power of Korean beauty. 
-            We believe that great skincare is self-care, and everyone deserves to feel confident 
-            and beautiful in their own skin. Through education, quality products, and genuine care 
-            for our customers, we're building a community that celebrates natural beauty and healthy skin.
+            To help everyone in Norway discover the transformative power of
+            Korean beauty. We believe that great skincare is self-care, and
+            everyone deserves to feel confident and beautiful in their own skin.
+            Through education, quality products, and genuine care for our
+            customers, we're building a community that celebrates natural beauty
+            and healthy skin.
           </p>
         </div>
       </div>
