@@ -1,7 +1,7 @@
 
   # E-commerce K-beauty Platform
 
-  This is a code bundle for E-commerce K-beauty Platform. The original project is available at https://www.figma.com/design/2DCUi4IlKioLpWdOdbp8aT/E-commerce-K-beauty-Platform.
+  This is for education purpose
 
   ## Running the code
 
